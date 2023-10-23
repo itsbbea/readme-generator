@@ -10,6 +10,9 @@
 6. License
 7. Questions
 
+## Screenshots
+![README Generator Screenshot](https://github.com/itsbbea/readme-generator/assets/137044035/b54cf99a-0068-45c6-82da-778ab1c0d794)
+
 ## Installation
 1. Clone the readme-generator repo: git clone <URL>
 2. Open in VS Code. Alternatively, you can open your terminal using your local command line e.g Git Bash
