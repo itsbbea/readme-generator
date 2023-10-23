@@ -28,47 +28,60 @@ ${answers.questions}
     `;
 }
 
-inquirer
-.prompt([
-{  type: "input",
-    name: "title",
-    message: "What is the title of the this project?",
-},
-{
-    type: 'input',
-    name: 'User Story',
-    message: 'Why did you build this project',
-},
-{
-type: 'input',
-name: 'Problem Solved',
-message: 'What problem does it solve?',
-},
-{
-type: 'input',
-name: 'usage',
-message: 'Write the usage information for your project.',
-},
-{
-type: 'input',
-name: 'license',
-message: 'Write the license information for your project.',
-},
-{
-type: 'input',
-name: 'contributions',
-message: 'Write the contributing information for your project.',
-},
-{
-type: 'input',
-name: 'Screenshots',
-message: 'Add a screenshot of your project',
-},
-{
-type: 'input',
-name: 'questions',
-message: 'Write the questions information for your project.',
-},
-]);
+function init() {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'title',
+                message: 'What is the title of this project?',
+            },
+            {
+                type: 'input',
+                name: 'contents',
+                message: 'Table of Contents',
+            },
+            {
+                type: 'input',
+                name: 'installation',
+                message: 'Write the installation information for your project.',
+            },
+            {
+                type: 'input',
+                name: 'usage',
+                message: 'Write the usage information for your project.',
+            },
+            {
+                type: 'input',
+                name: 'license',
+                message: 'Write the license information for your project.',
+            },
+            {
+                type: 'input',
+                name: 'contributing',
+                message: 'Write the contributing information for your project.',
+            },
+            {
+                type: 'input',
+                name: 'tests',
+                message: 'Write the tests information for your project.',
+            },
+            {
+                type: 'input',
+                name: 'questions',
+                message: 'Write the questions information for your project.',
+            },
+        ])
+        .then((answers) => {
+            const readmeContent = generateMarkdown(answers);
+            fs.writeFile('README.md', readmeContent, (err) => {
+                if (err) {
+                    console.log('An error occurred while writing the README.md file:', err);
+                } else {
+                    console.log('README.md has been successfully generated.');
+                }
+            });
+        });
+}
 
-
+init();
