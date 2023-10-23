@@ -1,5 +1,7 @@
 
 # Professional README generator
+## Description 
+This Professional README Generator helps users create a README file for their projects using Node.js. This generator includes a series of prompts which users will need to provide answers for in order for a README file to be successfully rendered. 
 
 ## Table of Contents
 1. Description
